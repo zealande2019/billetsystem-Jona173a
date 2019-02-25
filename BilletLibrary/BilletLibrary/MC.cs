@@ -6,13 +6,25 @@ namespace BilletLibrary
 {
     public class MC : Base
     {
-        //public string Nummerplade()
-        //{
-        //    if (Nummerplade > 7)
-        //    {
+        /// <summary>
+        /// Metode som gør at nummerpladen maks kan have 7 tegn.
+        /// </summary>
+        public string MCNummerplade
+        {
+            get { return MCNummerplade; }
+            set
+            {
+                if (MCNummerplade.Length <= 8)
+                {
+                    MCNummerplade = value;
+                }
+                else
+                {
+                    throw new ArgumentException("sdffsdx");
+                }
+            }
+        }
 
-        //    }
-        //}
         public override decimal Pris()
         {
             return 125;
@@ -22,7 +34,6 @@ namespace BilletLibrary
         {
             return "MC";
         }
-
 
     }
 }
