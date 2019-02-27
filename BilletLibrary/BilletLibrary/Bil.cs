@@ -11,7 +11,7 @@ namespace BilletLibrary
         /// <summary>
         /// Metode som gør at nummerpladen maks kan have 7 tegn.
         /// </summary>
-        public override string Nummerplade
+        public string Nummerplade
         {
             get { return _nummerplade; }
             set

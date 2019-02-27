@@ -8,10 +8,10 @@ namespace BilletLibrary
     {
         //Properties af Pris og køretøj
         //Laves abstract da de skal overrides
-        public abstract decimal Pris();
-        public abstract string Køretøj();
+        public decimal Pris();
+        public string Køretøj();
         public DateTime Dato { get; set; }
-        public abstract string _nummerplade { get; set; }
+        public string Nummerplade { get; set; }
 
         public string PrintInfo()
         {
