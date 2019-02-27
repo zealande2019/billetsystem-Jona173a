@@ -17,13 +17,19 @@ namespace BilletLibrary
                 if (MCNummerplade.Length <= 8)
                 {
                     MCNummerplade = value;
+                    throw new ArgumentException("Du har skrevet for mange tegn!");
+
                 }
                 else
                 {
-                    throw new ArgumentException("sdffsdx");
+                    return;
                 }
             }
         }
+        /// <summary>
+        /// Override af Pris og Køretøj
+        /// </summary>
+        /// <returns></returns>
 
         public override decimal Pris()
         {

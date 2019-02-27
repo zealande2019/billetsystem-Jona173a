@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 namespace BilletLibrary
@@ -18,14 +19,20 @@ namespace BilletLibrary
                 if (BilNummerplade.Length <= 8)
                 {
                     BilNummerplade = value;
+                    throw new ArgumentException("Du har skrevet for mange tegn!");
+
                 }
                 else
                 {
-                    throw new ArgumentException($"sdffsdx - du skev {value}");
+                    return;
                 }
             }
         }
 
+        /// <summary>
+        /// Override af Pris og køretøj
+        /// </summary>
+        /// <returns></returns>
         public override decimal Pris()
         {
             return 240;
