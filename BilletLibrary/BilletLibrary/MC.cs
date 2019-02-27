@@ -9,20 +9,19 @@ namespace BilletLibrary
         /// <summary>
         /// Metode som gør at nummerpladen maks kan have 7 tegn.
         /// </summary>
-        public string MCNummerplade
+        public override string Nummerplade
         {
-            get { return MCNummerplade; }
+            get { return _nummerplade; }
             set
             {
-                if (MCNummerplade.Length <= 8)
+                if (value.Length > 8)
                 {
-                    MCNummerplade = value;
+                    Nummerplade = value;
                     throw new ArgumentException("Du har skrevet for mange tegn!");
-
                 }
                 else
                 {
-                    return;
+                    _nummerplade = value;
                 }
             }
         }
@@ -40,6 +39,5 @@ namespace BilletLibrary
         {
             return "MC";
         }
-
     }
 }

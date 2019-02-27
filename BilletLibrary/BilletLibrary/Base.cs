@@ -10,10 +10,12 @@ namespace BilletLibrary
         //Laves abstract da de skal overrides
         public abstract decimal Pris();
         public abstract string Køretøj();
+        public DateTime Dato { get; set; }
+        public abstract string _nummerplade { get; set; }
 
         public string PrintInfo()
         {
-            return ($"Køretøjet: {Køretøj()} \nPris: {Pris()}");
+            return ($"Dato: {Dato}\nKøretøjet: {Køretøj()} \nPris: {Pris()}");
         }
     }
 }

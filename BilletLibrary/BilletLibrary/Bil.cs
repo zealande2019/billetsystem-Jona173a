@@ -11,20 +11,18 @@ namespace BilletLibrary
         /// <summary>
         /// Metode som gør at nummerpladen maks kan have 7 tegn.
         /// </summary>
-        public string BilNummerplade
+        public override string Nummerplade
         {
-            get { return BilNummerplade; }
+            get { return _nummerplade; }
             set
             {
-                if (BilNummerplade.Length <= 8)
+                if (value.Length > 7)
                 {
-                    BilNummerplade = value;
                     throw new ArgumentException("Du har skrevet for mange tegn!");
-
                 }
                 else
                 {
-                    return;
+                    _nummerplade = value;
                 }
             }
         }
